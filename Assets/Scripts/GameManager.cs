@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+
+
     [Header("ARABA AYARLARI")]
     public GameObject[] Arabalar;
     public int KacArabaOlsun;
     public GameObject DurusNoktasi;
-
+    int KalanAracSayisiDegeri;
     int AktifAracIndex = 0;
+
+    [Header("CANVAS AYARLARI")]
+    public Sprite AracGelmeGorseli;
+    public TextMeshProUGUI KalanAracSayisi;
+    public GameObject[] ArabaCanvasGorselleri;
 
     [Header("PLATFORM AYARLARI")]
     
@@ -17,10 +26,20 @@ public class GameManager : MonoBehaviour
     public GameObject Platform2;
 
     public float[] DonusHizlari;
+
+    [Header("---- LEVEL AYARLARI")]
+    public int ElmasSayisi;
+
     void Start()
     {
-       
-            
+        /*
+        KalanAracSayisiDegeri = KacArabaOlsun;
+        KalanAracSayisi.text = KalanAracSayisiDegeri.ToString();
+        for (int i = 0; i<KacArabaOlsun;i++)
+        {
+            ArabaCanvasGorselleri[i].SetActive(true);
+        }
+         */   
         
     }
 
@@ -31,6 +50,11 @@ public class GameManager : MonoBehaviour
         {
             Arabalar[AktifAracIndex].SetActive(true);
         }
+        /*
+        ArabaCanvasGorselleri[AktifAracIndex-1].GetComponent<Image>().sprite = AracGelmeGorseli;
+        KalanAracSayisiDegeri--;
+        KalanAracSayisi.text = KalanAracSayisiDegeri.ToString();
+        */
     }
 
    
