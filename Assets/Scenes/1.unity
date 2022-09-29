@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 31849617}
   - component: {fileID: 31849616}
   m_Layer: 5
-  m_Name: ParkEdilenAraba
+  m_Name: KazandinParkEdilenAraba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3249,7 +3249,7 @@ MonoBehaviour:
   - {fileID: 247670560}
   - {fileID: 738365912}
   - {fileID: 749659295}
-  KacArabaOlsun: 5
+  KacArabaOlsun: 4
   DurusNoktasi: {fileID: 144513088}
   AracGelmeGorseli: {fileID: 21300000, guid: 4b2c00eec5f883a4fa1190328af590e9, type: 3}
   KalanAracSayisi: {fileID: 1223190891}
@@ -3260,6 +3260,21 @@ MonoBehaviour:
   - {fileID: 1579661605}
   - {fileID: 964809743}
   - {fileID: 481639874}
+  Textler:
+  - {fileID: 5041381}
+  - {fileID: 1394345297}
+  - {fileID: 900317406}
+  - {fileID: 1764931617}
+  - {fileID: 31849616}
+  - {fileID: 657671415}
+  - {fileID: 1008934010}
+  - {fileID: 758728613}
+  - {fileID: 1482944766}
+  - {fileID: 1001829129}
+  Panellerim:
+  - {fileID: 1184953679}
+  - {fileID: 720623468}
+  - {fileID: 1493195706}
   Platform1: {fileID: 1723078931351297367}
   Platform2: {fileID: 0}
   DonusHizlari:
@@ -4588,7 +4603,7 @@ GameObject:
   - component: {fileID: 758728614}
   - component: {fileID: 758728613}
   m_Layer: 5
-  m_Name: LevelSayisi
+  m_Name: KaybettinLevelSayisi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4899,7 +4914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5084,7 +5099,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 883466237}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 620467376}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: SonrakiLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &883466237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5275,7 +5302,7 @@ GameObject:
   - component: {fileID: 900317407}
   - component: {fileID: 900317406}
   m_Layer: 5
-  m_Name: ElmasText
+  m_Name: KazandinElmasText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6131,7 +6158,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 991122209}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 620467376}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &991122209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6182,7 +6221,7 @@ GameObject:
   - component: {fileID: 1001829130}
   - component: {fileID: 1001829129}
   m_Layer: 5
-  m_Name: KazanilanElmas
+  m_Name: KaybettinKazanilanElmas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6452,7 +6491,7 @@ GameObject:
   - component: {fileID: 1008934011}
   - component: {fileID: 1008934010}
   m_Layer: 5
-  m_Name: ElmasText
+  m_Name: KaybettinElmasText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9529,7 +9568,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1509260739}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 620467376}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: izleVeDevamEt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1509260739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11000,7 +11051,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1733539677}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 620467376}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: izleVeDahaFazlaKazan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1733539677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11135,7 +11198,7 @@ GameObject:
   - component: {fileID: 1764931618}
   - component: {fileID: 1764931617}
   m_Layer: 5
-  m_Name: LevelSayisi
+  m_Name: KazandinLevelSayisi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
