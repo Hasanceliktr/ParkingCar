@@ -14,8 +14,10 @@ public class Araba : MonoBehaviour
     public Transform parent;
     public GameManager _GameManager;
     
+    public GameObject PartPoint;
 
-   
+
+
     void Update()
     {
         if (!DurusNoktasiDurumu)
@@ -31,40 +33,65 @@ public class Araba : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("DurusNoktasi"))
-        {
-            DurusNoktasiDurumu = true;
-            _GameManager.DurusNoktasi.SetActive(false);
-            //
-
-        }
+        
 
         if (collision.gameObject.CompareTag("Parking"))
         {
-            ilerle = false;
-            TekerLekesi[0].SetActive(false);
-            TekerLekesi[1].SetActive(false);
+            ArabaTeknikIslemler();
             transform.SetParent(parent);
 
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
             _GameManager.YeniArabaGetir();
 
         }
-        else if (collision.gameObject.CompareTag("OrtaGobek"))
-        {
-            Destroy(gameObject); // obje havuzunda arabayý false yapacaðýz. canvas cýkacak
-            _GameManager.Kaybettin();
-        }
+        
 
         else if (collision.gameObject.CompareTag("Araba"))
         {
+            _GameManager.CarpmaEfekti.transform.position = PartPoint.transform.position;
+            _GameManager.CarpmaEfekti.Play();
+            ArabaTeknikIslemler();
             Destroy(gameObject); // obje havuzunda arabayý false yapacaðýz. canvas cýkacak
             _GameManager.Kaybettin();
         }
-        else if (collision.gameObject.CompareTag("Elmas"))
+        
+    }
+
+    void ArabaTeknikIslemler()
+    {
+        ilerle = false;
+        TekerLekesi[0].SetActive(false);
+        TekerLekesi[1].SetActive(false);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("DurusNoktasi"))
         {
-            collision.gameObject.SetActive(false);
+            DurusNoktasiDurumu = true;
+            
+            //
+
+        }
+       
+
+        else if (other.gameObject.CompareTag("Elmas"))
+        {
+            other.gameObject.SetActive(false);
             _GameManager.ElmasSayisi++;
+        }
+
+        else if (other.gameObject.CompareTag("OrtaGobek"))
+        {
+            _GameManager.CarpmaEfekti.transform.position = PartPoint.transform.position;
+            _GameManager.CarpmaEfekti.Play();
+            ArabaTeknikIslemler();
+            //Destroy(gameObject); // obje havuzunda arabayý false yapacaðýz. canvas cýkacak
+            _GameManager.Kaybettin();
+        }
+
+        else if (other.gameObject.CompareTag("OnParking"))
+        {
+            other.gameObject.GetComponent<OnParking>().ParkingAktiflestir();
         }
     }
 }

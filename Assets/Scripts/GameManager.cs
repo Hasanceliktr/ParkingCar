@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     [Header("ARABA AYARLARI")]
     public GameObject[] Arabalar;
     public int KacArabaOlsun;
-    public GameObject DurusNoktasi;
     int KalanAracSayisiDegeri;
     int AktifAracIndex = 0;
 
@@ -28,14 +27,16 @@ public class GameManager : MonoBehaviour
     
     public GameObject Platform1;
     public GameObject Platform2;
-
     public float[] DonusHizlari;
+    bool DonusVarmi;
 
     [Header("---- LEVEL AYARLARI")]
+    public ParticleSystem CarpmaEfekti;
     public int ElmasSayisi;
 
     void Start()
     {
+        DonusVarmi = true;
         VarsayilanDegerleriKontrolEt();
         
         KalanAracSayisiDegeri = KacArabaOlsun;
@@ -51,7 +52,6 @@ public class GameManager : MonoBehaviour
 
     public void YeniArabaGetir()
     {
-        DurusNoktasi.SetActive(true);
         KalanAracSayisiDegeri--;
         if (AktifAracIndex<KacArabaOlsun)
         {
@@ -82,11 +82,16 @@ public class GameManager : MonoBehaviour
             Panellerim[0].SetActive(false);
         }
 
-        Platform1.transform.Rotate(new Vector3(0, 0, -DonusHizlari[0]),Space.Self);
+        if (DonusVarmi)
+        {
+            Platform1.transform.Rotate(new Vector3(0, 0, -DonusHizlari[0]), Space.Self);
+        }
+        
     }
 
     public void Kaybettin()
     {
+        DonusVarmi = false;
         //PlayerPrefs.SetInt("Elmas", PlayerPrefs.GetInt("Elmas") + ElmasSayisi);
         Textler[6].text = PlayerPrefs.GetInt("Elmas").ToString();
         Textler[7].text = SceneManager.GetActiveScene().name;
@@ -110,7 +115,7 @@ public class GameManager : MonoBehaviour
 
     public void Kazandin()
     {
-
+        PlayerPrefs.SetInt("Elmas", PlayerPrefs.GetInt("Elmas") + ElmasSayisi);
         Textler[2].text = PlayerPrefs.GetInt("Elmas").ToString();
         Textler[3].text = SceneManager.GetActiveScene().name;
         Textler[4].text = (KacArabaOlsun - KalanAracSayisiDegeri).ToString();
