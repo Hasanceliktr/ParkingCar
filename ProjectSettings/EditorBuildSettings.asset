@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AnaMenu.unity
     guid: 57f0405dbd76cd24b85c4d54e4678a2f
   - enabled: 1
